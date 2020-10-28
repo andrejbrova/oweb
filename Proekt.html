@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- Fig. 2.2: heading.html -->
+<!-- Heading elements h1 through h6. -->
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>My Personal Web Page</title>
+ <link rel="stylesheet" type="text/css" href="./proekt1.css"/>
+ </head>
+
+ <body>
+     <div id="header" class="Home">
+      <h1>Personal Information:</h1> 
+          First and Last Name: Andrej Brova
+          <address>Orce Nikolov No.206, 1000 Skopje (North Macedonia)</address>
+          Telephone: +38970360066
+          Mail: brovaandrej@gmail.com
+          Sex: Male
+          Date of Birth: 17/09/1999
+          Nationality: Macedonian
+     </div>
+      
+     <div class="Personal Statement">
+    
+         <h1>Personal Statement:</h1>
+         An undergraduate student, with strong programming skills, now seeking to acquire new knowledge and improve his skills.     
+     </div>
+
+     <div class="Description">
+      <h1>Picture:</h1>
+         <img src="../Images/jas.jpg" width=320 height=397
+          alt="jas">
+
+
+      <p>Communication skills: Good communication skills developed through playing on different sport teams for 10 years.
+      Excellent contact skills gained from working with different colleagues, through my several internships
+      and travels in multicultural countries.
+         
+      Organisational / managerial skills Good leadership and organisational skills (currently being a coordinator for a student organisation
+      called IAESTE)
+         
+      Job-related skills Programming skills (knowledge of several programming languages including C,C++ and Python)
+         
+      Excellent language skills</p>
+     </div>
+
+     
+    <div class="FavouriteThings">
+        <h1>FavouriteThings</h1>
+      <div>
+          <h2>Music</h2>
+         <p>In terms of music, I mainly listen to all kinds of music except for metal. This includes hip hop,rap,house,trans,rock.
+          I don't specifically have a favorite artist, but it's safe to say that I listen to almost all the famous artists from their specific music type.
+          Here are some photos and links of famous artists and their songs:</p>
+          
+          <img src="../Images/Eminem_Proekt_WEB.jpg" width=320 height=327
+          alt="Eminem">
+
+         <figcaption><em>Rap artist</em></figcaption>
+
+         <img src="../Images/Rihanna_Proekt_WEB.jpg" width=320 height=327
+         alt="Rihanna">
+
+         <figcaption><em>HIpHop artist</em></figcaption>
+
+         <img src="../Images/Bon_Jovi_Proekt_WEB.jpg" width=320 height=327
+         alt="Bon_Jovi">
+
+         <figcaption><em>Rock artist</em></figcaption>
+
+
+         <a href="https://www.youtube.com/watch?v=r_0JjYUe5jo">Eminem-Godzilla</a>
+
+         <a href="https://www.youtube.com/watch?v=CvBfHwUxHIk">Rihanna-Umbrella</a>
+
+         <a href="https://www.youtube.com/watch?v=vx2u5uUu3DE">Bon_Jovi-It's_My_Life</a>
+       </div>
+
+       <div>
+           <h2>Food</h2>
+          <p> In terms of food, I'm a bit peeky. But I try to eat healthy and am very strict with my diet. I consume fruits, vegetables, and drink a lot of water on a daily basis.
+           My favourite meal is steak and rice.</p>
+
+            <img src="../Images/Steak_and_Rice.jpg" width=420 height=327
+         alt="Steak and Rice">
+
+        </div>
+
+        <div>
+            <h2>Films</h2>
+           <p> I personally am a big fan of filmography. My favourite types of films are comedy,thriller,action and science-fiction.
+            My all time favourite movies are:The Avengers, The Shawshank Redemption, The Dark Knight and Star Wars.</p>
+
+
+            <img src="../Images/Avengers.jpg" width=320 height=327 
+            alt="The Avengers">
+
+            <img src="../Images/ShawshankRedemptionMoviePoster.jpg" width=320 height=327
+            alt="The Shawshank Redemption">
+
+            <img src="../Images/Dark_Knight.jpg" width=320 height=327
+            alt="The Dark Knight">
+
+            <img src="../Images/StarWars.jpg" width=320 height=327
+            alt="Star Wars">
+
+           
+        </div>
+     
+     
+    </div>
+
+    <div class="Gallery">
+        <div>
+            <h1>Gallery</h1>
+
+            <img src="../Images/Slika2.jpg" width=380 height=327
+            alt="Picture1">
+             <form action="/action_page.php">
+                <label for="w3review">Feel free to write comments here:</label>
+                <textarea id="comment" name="comment" rows="5" cols="50">
+                  </textarea>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form>
+
+                <img src="../Images/Slika1.jpg" width=380 height=427
+            alt="Picture2">
+             <form action="/action_page.php">
+                <label for="w3review">Feel free to write comments here:</label>
+                <textarea id="comment" name="comment" rows="5" cols="50">
+                  </textarea>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form>
+
+    </div>
+
+    <div class="Anketa">
+        <h1>Poll</h1>
+        <div>
+            <p>Please choose one of the following options(your impression about this page) :</p>
+            <form action="/action_page.php">
+                <input type="checkbox" id="impresija1" name="impresija1" value="Amazing">
+                <label for="impresija1"> Excellent, I like it!</label><br>
+                <input type="checkbox" id="impresija2" name="impresija2" value="OK">
+                <label for="impresija2"> Good, it's OK.</label><br>
+                <input type="checkbox" id="impresija3" name="impresija3" value="Bad">
+                <label for="impresija3"> Could be done better.</label><br><br>
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+
+
+        <div>
+            <form action="/action_page.php">
+                <label for="rating">Please rate my page from 1 to 10 (1-worst 10-best):</label>
+                <select name="rating" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+
+
+        
+
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer" class="Contact Info">
+        <h1>Contact Info</h1>
+        Telephone: <a href="Tel:+38970360066">070360066</a>
+        Mail: <a href="mailto:brovaandrej@gmail.com">AndrejBrovaMail</a>
+    </div>
+
+ </body>
+</html>
