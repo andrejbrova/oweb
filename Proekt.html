@@ -7,16 +7,62 @@
   <meta charset = "utf-8">
   <title>My Personal Web Page</title>
  <link rel="stylesheet" type="text/css" href="./proekt1.css"/>
+  
+ <script>
+  
+  var Clicks1 = 0 ;
+  var Clicks2 = 0;
+
+  function AddClick1(){
+    Clicks1 = Clicks1 + 1;
+    document.getElementById("CountedClicks1").innerHTML = Clicks1 + ' Likes';
+  }
+  function AddClick2() {
+    Clicks2 = Clicks2 + 1;
+    document.getElementById("CountedClicks2").innerHTML = Clicks2 + ' Likes';
+  }
+
+
+function Swap() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Have you finishes with the poll?") {
+    x.innerHTML = "Thank you for sharing your opinions!";
+  } else {
+    x.innerHTML = "Have you finishes with the poll?";
+  }
+}
+
+
+function TellDateAfterBlogText() {
+  var d = new Date();
+  d.getUTCDate();
+  document.getElementById("demo").innerHTML = d;
+}
+
+
+name = window.prompt("Please enter your first and last name.");
+window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!\n");
+
+
+
+</script>
+
+
+
  </head>
 
  <body>
   
+  <div class="navbar">
+
    <button class="btn"><i class="fa fa-home"></i> Home</button>
    <button class="btn"><i class="fa fa-favouritethings"></i> Favourite Things</button>
    <button class="btn"><i class="fa fa-gallery"></i> Gallery</button>
    <button class="btn"><i class="fa fa-blog"></i> Blog</button>
    <button class="btn"><i class="fa fa-poll"></i> Poll</button>
    <button class="btn"><i class="fa fa-contact"></i> Contact</button>
+  
+  </div>
 
 
 
@@ -122,7 +168,8 @@
 
             <img src="../Images/Slika2.jpg" width=380 height=327
             alt="Picture1">
-            <button class="btn"><i class="fa fa-like"></i> Like</button>
+            <span id="CountedClicks1"> Likes</span><br>
+            <button class="btn" onclick="AddClick1()" type="button"><i class="fa fa-like"></i>Like</button>
              <form action="/action_page.php">
                 <label for="w3review">Feel free to write comments here:</label>
                 <textarea id="comment" name="comment" rows="4" cols="50">
@@ -134,7 +181,8 @@
 
                 <img src="../Images/Slika1.jpg" width=380 height=427
             alt="Picture2">
-            <button class="btn"><i class="fa fa-like"></i> Like</button>
+            <span id="CountedClicks2"> Likes</span><br>
+            <button class="btn" onclick="AddClick2()" type="button"><i class="fa fa-like"></i>Like</button>
              <form action="/action_page.php">
                 <label for="w3review">Feel free to write comments here:</label>
                 <textarea id="comment" name="comment" rows="4" cols="50">
@@ -157,9 +205,11 @@
           <textarea id="comment" name="comment" rows="5" cols="50">
             </textarea>
             <br><br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-          </form>
+          <input type="reset" value="Reset">
+        </form>
+        <button onclick="TellDateAfterBlogText()">Post</button>
+        <h3 id="demo"></h3>
+          
 
           <form action="/action_page.php">
             <label for="datetime-local">Please enter the date and time you entered the text above (date and time):</label>
@@ -183,7 +233,6 @@
             <input type="text" id="fname" name="fname"><br><br>
             <label for="lname">Last name:</label>
             <input type="text" id="lname" name="lname"><br><br>
-            <input type="submit" value="Submit">
             <input type="reset" value="Reset">
           </form>
         </div>
@@ -194,7 +243,6 @@
             <form action="/action_page.php">
               <label for="email">Enter your email:</label>
               <input type="email" id="email" name="email">
-              <input type="submit" value="Submit">
               <input type="reset" value="Reset">
             </form>
           </div>
@@ -205,7 +253,6 @@
               <label for="phone">Enter a phone number:</label><br><br>
               <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
               <small>Format: 123-45-678</small><br><br>
-              <input type="submit" value="Submit">
               <input type="reset" value="Reset">
             </form>
           </div>
@@ -221,7 +268,6 @@
                 <label for="impresija2"> Good, it's OK.</label><br>
                 <input type="checkbox" id="impresija3" name="impresija3" value="Bad">
                 <label for="impresija3"> Could be done better.</label><br><br>
-                <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
               </form>
         </div>
@@ -243,7 +289,6 @@
                   <option value="10">10</option>
                 </select>
                 <br><br>
-                <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
               </form>
         </div>
@@ -251,14 +296,18 @@
 
         <div>
             <form action="/action_page.php">
-                <label for="w3review">PLease feel free to write comments about my page:</label>
+                <label for="w3review">Please feel free to write comments about my page:</label>
                 <textarea id="comment" name="comment" rows="4" cols="50">
                   </textarea>
                   <br><br>
-                  <input type="submit" value="Submit">
                   <input type="reset" value="Reset">
                 </form>
         </div>
+
+
+        <p><div id="myDIV">Have you finishes with the poll?</div>
+        <button onclick="Swap()">Yes</button></p>
+        
 
 
         
