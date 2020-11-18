@@ -39,12 +39,18 @@ function TellDateAfterBlogText() {
   document.getElementById("demo").innerHTML = d;
 }
 
-
-class Comments{
-  
-
+function addComment()
+{ 
+    var inputString = document.getElementById( "inputkomentar" ).value;
+    document.getElementById("komentari").innerHTML=inputString;
 }
-
+function start()
+{
+   var commentButton = document.getElementById( "comment1" );
+   commentButton.addEventListener( "click", addComment, false );
+}
+window.addEventListener( "load", start, false );
+//javascript kod za komentar
 
 name = window.prompt("Please enter your first and last name.");
 window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!\n");
@@ -176,27 +182,43 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
             alt="Picture1">
             <span id="CountedClicks1"> Likes</span><br>
             <button class="btn" onclick="AddClick1()" type="button"><i class="fa fa-like"></i>Like</button>
-             <form action="/action_page.php">
-                <label for="w3review">Feel free to write comments here:</label>
-                <textarea id="comment" name="comment" rows="4" cols="50">
-                  </textarea>
-                  <br><br>
-                  <input type="submit" value="Submit">
-                  <input type="reset" value="Reset">
-                </form>
+             <table>
+                  <thead>
+                          <tr>
+                              <td class="jj"><button id="comment1" onclick="addComment()"><img src="sliki/comment.png" width="40" height="40" alt="comment" ></button></td>
+                          </tr>
+                          <tr>
+                              <td id="res1" class="j2" colspan="3"></td>
+                          </tr>
+                          <tr>
+                              <td colspan="3"><input type="text" id="inputkomentar" placeholder="comment"></td>
+                          </tr>
+                          <tr class="coment1">
+                              <td id="komentari" colspan="3"></td>
+                          </tr>
+                  </thead>
+              </table>
 
                 <img src="../Images/Slika1.jpg" width=380 height=427
             alt="Picture2">
             <span id="CountedClicks2"> Likes</span><br>
             <button class="btn" onclick="AddClick2()" type="button"><i class="fa fa-like"></i>Like</button>
-             <form action="/action_page.php">
-                <label for="w3review">Feel free to write comments here:</label>
-                <textarea id="comment" name="comment" rows="4" cols="50">
-                  </textarea>
-                  <br><br>
-                  <input type="submit" value="Submit">
-                  <input type="reset" value="Reset">
-                </form>
+            <table>
+              <thead>
+                      <tr>
+                          <td class="jj"><button id="comment1" onclick="addComment()"><img src="sliki/comment.png" width="40" height="40" alt="comment" ></button></td>
+                      </tr>
+                      <tr>
+                          <td id="res1" class="j2" colspan="3"></td>
+                      </tr>
+                      <tr>
+                          <td colspan="3"><input type="text" id="inputkomentar" placeholder="comment"></td>
+                      </tr>
+                      <tr class="coment1">
+                          <td id="komentari" colspan="3"></td>
+                      </tr>
+              </thead>
+          </table>
 
     </div>
     </p>
