@@ -41,14 +41,18 @@ function TellDateAfterBlogText() {
 
 function addComment()
 { 
-    var inputString = document.getElementById( "inputkomentar" ).value;
-    document.getElementById("komentari").innerHTML=inputString;
+    var inputString = document.getElementById( "ta" ).value;
+    document.getElementById("pa").innerHTML += "<br>" + inputString;
+    
 }
-function start()
-{
-   var commentButton = document.getElementById( "comment1" );
-   commentButton.addEventListener( "click", addComment, false );
+
+function addComment1()
+{ 
+    var inputString1 = document.getElementById( "uh" ).value;
+    document.getElementById("hu").innerHTML += "<br>" + inputString1;
+    
 }
+
 window.addEventListener( "load", start, false );
 //javascript kod za komentar
 
@@ -182,43 +186,27 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
             alt="Picture1">
             <span id="CountedClicks1"> Likes</span><br>
             <button class="btn" onclick="AddClick1()" type="button"><i class="fa fa-like"></i>Like</button>
-             <table>
-                  <thead>
-                          <tr>
-                              <td class="jj"><button id="comment1" onclick="addComment()"><img src="sliki/comment.png" width="40" height="40" alt="comment" ></button></td>
-                          </tr>
-                          <tr>
-                              <td id="res1" class="j2" colspan="3"></td>
-                          </tr>
-                          <tr>
-                              <td colspan="3"><input type="text" id="inputkomentar" placeholder="comment"></td>
-                          </tr>
-                          <tr class="coment1">
-                              <td id="komentari" colspan="3"></td>
-                          </tr>
-                  </thead>
-              </table>
+            <div class="row">
+              <div id="pa"></div>
+               <div class="column"><p><label>Comments:<br>
+                <textarea id="ta" name="comments" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
+                <button type="button" onclick="addComment()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                </label></p>
+                </div>
+                </div> 
 
                 <img src="../Images/Slika1.jpg" width=380 height=427
             alt="Picture2">
             <span id="CountedClicks2"> Likes</span><br>
             <button class="btn" onclick="AddClick2()" type="button"><i class="fa fa-like"></i>Like</button>
-            <table>
-              <thead>
-                      <tr>
-                          <td class="jj"><button id="comment1" onclick="addComment()"><img src="sliki/comment.png" width="40" height="40" alt="comment" ></button></td>
-                      </tr>
-                      <tr>
-                          <td id="res1" class="j2" colspan="3"></td>
-                      </tr>
-                      <tr>
-                          <td colspan="3"><input type="text" id="inputkomentar" placeholder="comment"></td>
-                      </tr>
-                      <tr class="coment1">
-                          <td id="komentari" colspan="3"></td>
-                      </tr>
-              </thead>
-          </table>
+            <div class="row1">
+              <div id="hu"></div>
+               <div class="column1"><p><label>Comments:<br>
+                <textarea id="uh" name="comments1" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
+                <button type="button" onclick="addComment1()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                </label></p>
+                </div>
+                </div>
 
     </div>
     </p>

@@ -44,8 +44,12 @@ h2{
   }
 
 
-#comment1 {
+.row {
     text-align: center;
-    margin-right: 1400px;
+    margin-left: 600px;
 }
 
+.row1 {
+    text-align: center;
+    margin-left: 600px;
+}
