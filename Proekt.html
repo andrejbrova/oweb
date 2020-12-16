@@ -122,6 +122,23 @@ function start()
 window.addEventListener( "load", start, false );
 
 
+
+function myFunction() {
+  var str1 = "Steak and Rice";
+  var result1 = str1.link("https://www.allrecipes.com/recipe/14632/steak-and-rice/");
+  document.getElementById("steak and rice").innerHTML = result1;
+  
+  var str2 = "Fruits";
+  var result2 = str2.link("https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/");
+  document.getElementById("fruit").innerHTML = result2;
+  
+  var str3 = "Vegetables";
+  var result3 = str3.link("https://www.halfyourplate.ca/fruits-and-veggies/veggies-a-z/");
+  document.getElementById("vegetable").innerHTML = result3;
+}
+
+
+
 name = window.prompt("Please enter your first and last name.");
 window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!\n");
 
@@ -225,7 +242,7 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
            My favourite meal is steak and rice.</p>
 
            <div id = "MainImage">
-            <img id = "ImageCover" src = "fullsize/../Images/Steak_and_Rice.jpg" 
+            <img id = "ImageCover" src = "fullsize/Steak_and_Rice.jpg" 
              alt = "Full cover image">
            </div> 
            <div id="thumbs">
@@ -233,6 +250,18 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
             <img src="../Images/Fruits.jpg" id="F" width=420 height=327 alt="Fruits">
             <img src="../Images/Vegetables.jpg" id="V" width=420 height=327 alt="Vegetables">
            </div>
+
+
+           <p id="DinamickoPrevzemanje">Feel free to get some text from these webpages.
+           <button onclick="myFunction()">List of webpages</button>
+           <div id="steak and rice"></div>
+           <div id="fruit"></div>
+           <div id="vegetable"></div>
+           
+           <textarea id="comment" name="comment" rows="5" cols="50">
+          </textarea>
+          <input type="submit">
+            <input type="reset" value="Reset"></p>
 
         </div>
         </p>
