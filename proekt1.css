@@ -53,3 +53,14 @@ h2{
     text-align: center;
     margin-left: 600px;
 }
+
+
+#helpText   { font-family: sans-serif; color: red; margin-top: 10px; }
+
+
+#MainImage  { 
+    width: 289px;
+    padding: 5px; 
+}
+
+#ImageCover { height: 373px; }
