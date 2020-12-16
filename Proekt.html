@@ -134,14 +134,21 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
  <body>
   
   <div class="navbar">
-
-   <button class="btn"><i class="fa fa-home"></i> Home</button>
-   <button class="btn"><i class="fa fa-favouritethings"></i> Favourite Things</button>
-   <button class="btn"><i class="fa fa-gallery"></i> Gallery</button>
-   <button class="btn"><i class="fa fa-blog"></i> Blog</button>
-   <button class="btn"><i class="fa fa-poll"></i> Poll</button>
-   <button class="btn"><i class="fa fa-contact"></i> Contact</button>
-  
+    <a href="#home">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Favourite Things
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://en.wikipedia.org/wiki/Music">Music</a>
+        <a href="https://en.wikipedia.org/wiki/Food">Food</a>
+        <a href="https://en.wikipedia.org/wiki/Film">Films</a>
+      </div>
+    </div>
+    <a href="#gallery">Gallery</a>
+    <a href="#blog">Blog</a>
+    <a href="#poll">Poll</a>
+    <a href="#contact">Contact</a>
   </div>
 
 
@@ -149,13 +156,14 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
      <div id="header" class="Home">
        <h1>Home</h1>
       <h2>Personal Information:</h2>
-      <div>Seconds you have spent viewing this page so far:
+      <div id="seconds">Seconds you have spent viewing this page so far:
         <span id = "Seconds1">0</span></div> 
-          First and Last Name: Andrej Brova
-          <address>Orce Nikolov No.206, 1000 Skopje (North Macedonia)</address>
-          Sex: Male
-          Date of Birth: 17/09/1999
-          Nationality: Macedonian
+        
+        First and Last Name: Andrej Brova
+        <address>Orce Nikolov No.206, 1000 Skopje (North Macedonia)</address>
+        Sex: Male
+        Date of Birth: 17/09/1999
+        Nationality: Macedonian
      </div>
       
      <div class="Personal Statement">
