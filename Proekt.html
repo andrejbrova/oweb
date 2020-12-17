@@ -7,7 +7,9 @@
   <meta charset = "utf-8">
   <title>My Personal Web Page</title>
  <link rel="stylesheet" type="text/css" href="./proekt1.css"/>
-  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+
  <script>
 
   function AddClick1(){
@@ -53,17 +55,54 @@ function TellDateAfterBlogText() {
   document.getElementById("demo").innerHTML = d;
 }
 
-function addComment()
-{ 
-    var inputString = document.getElementById( "ta" ).value;
-    document.getElementById("pa").innerHTML += "<br>" + inputString;
-    
+
+function AddComment() {
+  var komentar1;
+$(document).ready(function(){
+var data = new Date();
+    var datum = data.getDate() + "/"
+            + (data.getMonth()+1)  + "/" 
+            + data.getFullYear() + " "  
+            + data.getHours() + ":"  
+            + data.getMinutes();
+
+    var $komentari1 = $('#pa'); 
+    if(localStorage.getItem("#pa")) { 
+        $komentari1.html(localStorage.getItem("#pa"));                
+    }
+
+    $('#b1').click(function(){
+        komentar1 = document.getElementById("ta").value;
+        $("#pa").append("<p>" + komentar1 + "<p>" + datum + "</p></p>");
+        localStorage.setItem("#pa", $komentari1.html());
+    });
+});
 }
+
+
 
 function addComment1()
 { 
-    var inputString1 = document.getElementById( "uh" ).value;
-    document.getElementById("hu").innerHTML += "<br>" + inputString1;
+  var komentar2;
+$(document).ready(function(){
+var data1 = new Date();
+    var datum1 = data1.getDate() + "/"
+            + (data1.getMonth()+1)  + "/" 
+            + data1.getFullYear() + " "  
+            + data1.getHours() + ":"  
+            + data1.getMinutes();
+
+    var $komentari2 = $('#hu'); 
+    if(localStorage.getItem("#hu")) { 
+        $komentari2.html(localStorage.getItem("#hu"));                
+    }
+
+    $('#b2').click(function(){
+        komentar2 = document.getElementById("uh").value;
+        $("#hu").append("<p>" + komentar2 + "<p>" + datum1 + "</p></p>");
+        localStorage.setItem("#hu", $komentari2.html());
+    });
+});
     
 }
 
@@ -314,7 +353,7 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
               <div id="pa"></div>
                <div class="column"><p><label>Comments:<br>
                 <textarea id="ta" name="comments" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
-                <button type="button" onclick="addComment()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                <button type="button" id="b1" onclick="AddComment()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
                 </label></p>
                 </div>
                 </div> 
@@ -327,7 +366,7 @@ window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!
               <div id="hu"></div>
                <div class="column1"><p><label>Comments:<br>
                 <textarea id="uh" name="comments1" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
-                <button type="button" onclick="addComment1()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                <button type="button" id="b2" onclick="addComment1()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
                 </label></p>
                 </div>
                 </div>
