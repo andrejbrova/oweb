@@ -9,17 +9,31 @@
  <link rel="stylesheet" type="text/css" href="./proekt1.css"/>
   
  <script>
-  
-  var Clicks1 = 0 ;
-  var Clicks2 = 0;
 
   function AddClick1(){
-    Clicks1 = Clicks1 + 1;
-    document.getElementById("CountedClicks1").innerHTML = Clicks1 + ' Likes';
+    if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount1) {
+      localStorage.clickcount1 = Number(localStorage.clickcount1)+1;
+    } else {
+      localStorage.clickcount1 = 1;
+      }
+    document.getElementById("CountedClicks1").innerHTML = localStorage.clickcount1 + " Likes";
+    } else {
+    document.getElementById("CountedClicks1").innerHTML = "Sorry, your browser does not support web storage...";
+    }
   }
+  
   function AddClick2() {
-    Clicks2 = Clicks2 + 1;
-    document.getElementById("CountedClicks2").innerHTML = Clicks2 + ' Likes';
+    if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount2) {
+      localStorage.clickcount2 = Number(localStorage.clickcount2)+1;
+    } else {
+      localStorage.clickcount2 = 1;
+      }
+    document.getElementById("CountedClicks2").innerHTML = localStorage.clickcount2 + " Likes";
+    } else {
+    document.getElementById("CountedClicks2").innerHTML = "Sorry, your browser does not support web storage...";
+    }
   }
 
 
