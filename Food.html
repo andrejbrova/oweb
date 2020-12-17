@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Fig. 2.2: heading.html -->
+<!-- Heading elements h1 through h6. -->
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>Food</title>
+ <link rel="stylesheet" type="text/css" href="./WebStranaCelosna.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+ <script>
+     function display( imgfile )
+{
+   var bigImage = document.getElementById( "ImageCover" );
+   bigImage.setAttribute( "style", "width: 500px; height: 400px;" );
+   bigImage.setAttribute( "src", "fullsize/" + imgfile );
+   bigImage.setAttribute( "alt", "Large version of " + imgfile );
+}
+function start()
+{
+   document.getElementById( "SaR" ).addEventListener(
+      "click", function() { display( "../Images/Steak_and_Rice.jpg" ); }, false );
+   document.getElementById( "F" ).addEventListener(
+      "click", function() { display( "../Images/Fruits.jpg" ); }, false );
+   document.getElementById( "V" ).addEventListener(
+      "click", function() { display( "../Images/Vegetables.jpg" ); }, false );
+}
+window.addEventListener( "load", start, false );
+
+
+
+function myFunction() {
+  var str1 = "Steak and Rice";
+  var result1 = str1.link("https://www.allrecipes.com/recipe/14632/steak-and-rice/");
+  document.getElementById("steak and rice").innerHTML = result1;
+  
+  var str2 = "Fruits";
+  var result2 = str2.link("https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/");
+  document.getElementById("fruit").innerHTML = result2;
+  
+  var str3 = "Vegetables";
+  var result3 = str3.link("https://www.halfyourplate.ca/fruits-and-veggies/veggies-a-z/");
+  document.getElementById("vegetable").innerHTML = result3;
+}
+
+
+$( "#target" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+
+
+ </script>
+ </head>
+
+
+ <body>
+ <p>    
+    <div class="FavouriteThings">
+     
+      
+      <p>
+      <div>
+          <h2>Food</h2>
+         <p> In terms of food, I'm a bit peeky. But I try to eat healthy and am very strict with my diet. I consume fruits, vegetables, and drink a lot of water on a daily basis.
+          My favourite meal is steak and rice.</p>
+
+          <div id = "MainImage">
+           <img id = "ImageCover" src = "fullsize/Steak_and_Rice.jpg" 
+            alt = "Full cover image">
+          </div> 
+          <div id="thumbs">
+           <img src="../Images/Steak_and_Rice.jpg" id="SaR" width=420 height=327 alt="Steak and Rice">
+           <img src="../Images/Fruits.jpg" id="F" width=420 height=327 alt="Fruits">
+           <img src="../Images/Vegetables.jpg" id="V" width=420 height=327 alt="Vegetables">
+          </div>
+
+
+          <p id="DinamickoPrevzemanje">Feel free to get some text from these webpages.
+          <button onclick="myFunction()">List of webpages</button>
+          <div id="steak and rice"></div>
+          <div id="fruit"></div>
+          <div id="vegetable"></div>
+          
+          <form id="target" action="destination.html">
+          <textarea id="comment" name="comment" rows="5" cols="50">
+         </textarea>
+         <input type="submit" value="Submit">
+           <input type="reset" value="Reset"></p>
+
+       </form>
+
+       </div>
+       </p>    
+   </div>
+   </p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Fig. 2.2: heading.html -->
+<!-- Heading elements h1 through h6. -->
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>Blog</title>
+ <link rel="stylesheet" type="text/css" href="./WebStranaCelosna.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+ 
+
+ <script>
+     function TellDateAfterBlogText() {
+  var d = new Date();
+  d.getUTCDate();
+  document.getElementById("demo").innerHTML = d;
+}
+
+$( "#target" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+ </script>
+
+</head>
+
+
+
+ <body>
+    <p>
+    <div class="Blog">
+      <h1>Blog</h1>
+      <div>
+        <form id="target" action="destination.html">
+          <label for="w3review">Write text here about topics of your interest:</label>
+          <textarea id="comment" name="comment" rows="5" cols="50">
+            </textarea>
+            <br><br>
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </form>
+        <button onclick="TellDateAfterBlogText()">Post</button>
+        <h3 id="demo"></h3>
+          
+
+          <form action="/action_page.php">
+            <label for="datetime-local">Please enter the date and time you entered the text above (date and time):</label>
+            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+          </form>
+      </div>
+
+    </div>
+    </p>
+ 
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Fig. 2.2: heading.html -->
+<!-- Heading elements h1 through h6. -->
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>Home</title>
+ <link rel="stylesheet" type="text/css" href="./WebStranaCelosna.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+ 
+
+ <script>
+     var seconds = 0;
+function startTimer() 
+{
+   window.setInterval( "updateTime()", 1000 );
+}
+function updateTime()
+{
+   ++seconds;                
+   document.getElementById( "Seconds1" ).innerHTML = seconds;
+}
+window.addEventListener( "load", startTimer, false );
+
+
+name = window.prompt("Please enter your first and last name.");
+window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!\n");
+ </script>
+ </head>
+
+
+ <body>
+  
+    <div class="navbar">
+      <a href="Home.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Favourite Things
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="Music.html">Music</a>
+          <a href="Food.html">Food</a>
+          <a href="Films.html">Films</a>
+        </div>
+      </div>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Blog.html">Blog</a>
+      <a href="Poll.html">Poll</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  
+  
+  
+       <div id="header" class="Home">
+         <h1>Home</h1>
+        <h2>Personal Information:</h2>
+        <div id="seconds">Seconds you have spent viewing this page so far:
+          <span id = "Seconds1">0</span></div> 
+          
+          First and Last Name: Andrej Brova
+          <address>Orce Nikolov No.206, 1000 Skopje (North Macedonia)</address>
+          Sex: Male
+          Date of Birth: 17/09/1999
+          Nationality: Macedonian
+       </div>
+        
+       <div class="Personal Statement">
+      
+           <h2>Personal Statement:</h2>
+           An undergraduate student, with strong programming skills, now seeking to acquire new knowledge and improve his skills.     
+       </div>
+  
+       <div class="Description">
+        <h2>Picture:</h2>
+           <img src="../Images/jas.jpg" width=320 height=397
+            alt="jas">
+  
+  
+        <div id="ColorText"><p>Communication skills: Good communication skills developed through playing on different sport teams for 10 years.
+        Excellent contact skills gained from working with different colleagues, through my several internships
+        and travels in multicultural countries.
+           
+        Organisational / managerial skills: Good leadership and organisational skills (currently being a coordinator for a student organisation
+        called IAESTE).
+           
+        Job-related skills: Programming skills (knowledge of several programming languages including C,C++ and Python).
+           
+        Excellent language skills.</p></div>
+       </div>
+
+       </body>
+</html>
