@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- Fig. 2.2: heading.html -->
+<!-- Heading elements h1 through h6. -->
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>My Personal Web Page</title>
+ <link rel="stylesheet" type="text/css" href="./proekt1.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+
+ <script>
+
+  function AddClick1(){
+    if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount1) {
+      localStorage.clickcount1 = Number(localStorage.clickcount1)+1;
+    } else {
+      localStorage.clickcount1 = 1;
+      }
+    document.getElementById("CountedClicks1").innerHTML = localStorage.clickcount1 + " Likes";
+    } else {
+    document.getElementById("CountedClicks1").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  
+  function AddClick2() {
+    if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount2) {
+      localStorage.clickcount2 = Number(localStorage.clickcount2)+1;
+    } else {
+      localStorage.clickcount2 = 1;
+      }
+    document.getElementById("CountedClicks2").innerHTML = localStorage.clickcount2 + " Likes";
+    } else {
+    document.getElementById("CountedClicks2").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+
+
+function Swap() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Have you finishes with the poll?") {
+    x.innerHTML = "Thank you for sharing your opinions!";
+  } else {
+    x.innerHTML = "Have you finishes with the poll?";
+  }
+}
+
+
+function TellDateAfterBlogText() {
+  var d = new Date();
+  d.getUTCDate();
+  document.getElementById("demo").innerHTML = d;
+}
+
+
+function AddComment() {
+  var komentar1;
+$(document).ready(function(){
+var data = new Date();
+    var datum = data.getDate() + "/"
+            + (data.getMonth()+1)  + "/" 
+            + data.getFullYear() + " "  
+            + data.getHours() + ":"  
+            + data.getMinutes();
+
+    var $komentari1 = $('#pa'); 
+    if(localStorage.getItem("#pa")) { 
+        $komentari1.html(localStorage.getItem("#pa"));                
+    }
+
+    $('#b1').click(function(){
+        komentar1 = document.getElementById("ta").value;
+        $("#pa").append("<p>" + komentar1 + "<p>" + datum + "</p></p>");
+        localStorage.setItem("#pa", $komentari1.html());
+    });
+});
+}
+
+
+
+function addComment1()
+{ 
+  var komentar2;
+$(document).ready(function(){
+var data1 = new Date();
+    var datum1 = data1.getDate() + "/"
+            + (data1.getMonth()+1)  + "/" 
+            + data1.getFullYear() + " "  
+            + data1.getHours() + ":"  
+            + data1.getMinutes();
+
+    var $komentari2 = $('#hu'); 
+    if(localStorage.getItem("#hu")) { 
+        $komentari2.html(localStorage.getItem("#hu"));                
+    }
+
+    $('#b2').click(function(){
+        komentar2 = document.getElementById("uh").value;
+        $("#hu").append("<p>" + komentar2 + "<p>" + datum1 + "</p></p>");
+        localStorage.setItem("#hu", $komentari2.html());
+    });
+});
+    
+}
+
+
+
+var seconds = 0;
+function startTimer() 
+{
+   window.setInterval( "updateTime()", 1000 );
+}
+function updateTime()
+{
+   ++seconds;                
+   document.getElementById( "Seconds1" ).innerHTML = seconds;
+}
+window.addEventListener( "load", startTimer, false );
+
+
+
+var PollHelpArray = [ "Enter your first and second name in this input box.",
+  "Enter your e-mail address in the format user@domain.",
+  "Enter your telephone number here.",
+  "Check one of these boxes, based on your impression.",
+  "Rate our site from 1 to 10.",
+  "Enter any comments here that you'd like us to read.",
+   "" ];
+var helpText;
+
+function init()
+{
+   helpText = document.getElementById( "helpText" );
+   
+   registerListeners(document.getElementById( "name" ), 0 );
+   registerListeners(document.getElementById( "email" ), 1 );
+   registerListeners(document.getElementById( "telephone" ), 2 );
+   registerListeners(document.getElementById( "impression" ), 3 );
+   registerListeners(document.getElementById( "rating" ), 4 );
+   registerListeners(document.getElementById( "comments" ), 5 );
+} 
+
+function registerListeners( object, messageNumber )
+{
+   object.addEventListener( "focus", 
+      function() { helpText.innerHTML = PollHelpArray[ messageNumber ]; },
+      false );
+   object.addEventListener( "blur", 
+      function() { helpText.innerHTML = PollHelpArray[ 6 ]; }, false );
+}
+window.addEventListener( "load", init, false );
+
+
+
+
+function display( imgfile )
+{
+   var bigImage = document.getElementById( "ImageCover" );
+   bigImage.setAttribute( "style", "width: 500px; height: 400px;" );
+   bigImage.setAttribute( "src", "fullsize/" + imgfile );
+   bigImage.setAttribute( "alt", "Large version of " + imgfile );
+}
+function start()
+{
+   document.getElementById( "SaR" ).addEventListener(
+      "click", function() { display( "../Images/Steak_and_Rice.jpg" ); }, false );
+   document.getElementById( "F" ).addEventListener(
+      "click", function() { display( "../Images/Fruits.jpg" ); }, false );
+   document.getElementById( "V" ).addEventListener(
+      "click", function() { display( "../Images/Vegetables.jpg" ); }, false );
+}
+window.addEventListener( "load", start, false );
+
+
+
+function myFunction() {
+  var str1 = "Steak and Rice";
+  var result1 = str1.link("https://www.allrecipes.com/recipe/14632/steak-and-rice/");
+  document.getElementById("steak and rice").innerHTML = result1;
+  
+  var str2 = "Fruits";
+  var result2 = str2.link("https://www.halfyourplate.ca/fruits-and-veggies/fruits-a-z/");
+  document.getElementById("fruit").innerHTML = result2;
+  
+  var str3 = "Vegetables";
+  var result3 = str3.link("https://www.halfyourplate.ca/fruits-and-veggies/veggies-a-z/");
+  document.getElementById("vegetable").innerHTML = result3;
+}
+
+
+
+name = window.prompt("Please enter your first and last name.");
+window.alert("Hello there " + name + ".\n Thank you for checking out my webpage!\n");
+
+
+
+
+$( "#target" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+
+</script>
+
+
+
+ </head>
+
+ <body>
+  
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Favourite Things
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://en.wikipedia.org/wiki/Music">Music</a>
+        <a href="https://en.wikipedia.org/wiki/Food">Food</a>
+        <a href="https://en.wikipedia.org/wiki/Film">Films</a>
+      </div>
+    </div>
+    <a href="#gallery">Gallery</a>
+    <a href="#blog">Blog</a>
+    <a href="#poll">Poll</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+
+     <div id="header" class="Home">
+       <h1>Home</h1>
+      <h2>Personal Information:</h2>
+      <div id="seconds">Seconds you have spent viewing this page so far:
+        <span id = "Seconds1">0</span></div> 
+        
+        First and Last Name: Andrej Brova
+        <address>Orce Nikolov No.206, 1000 Skopje (North Macedonia)</address>
+        Sex: Male
+        Date of Birth: 17/09/1999
+        Nationality: Macedonian
+     </div>
+      
+     <div class="Personal Statement">
+    
+         <h2>Personal Statement:</h2>
+         An undergraduate student, with strong programming skills, now seeking to acquire new knowledge and improve his skills.     
+     </div>
+
+     <div class="Description">
+      <h2>Picture:</h2>
+         <img src="../Images/jas.jpg" width=320 height=397
+          alt="jas">
+
+
+      <div id="ColorText"><p>Communication skills: Good communication skills developed through playing on different sport teams for 10 years.
+      Excellent contact skills gained from working with different colleagues, through my several internships
+      and travels in multicultural countries.
+         
+      Organisational / managerial skills: Good leadership and organisational skills (currently being a coordinator for a student organisation
+      called IAESTE).
+         
+      Job-related skills: Programming skills (knowledge of several programming languages including C,C++ and Python).
+         
+      Excellent language skills.</p></div>
+     </div>
+
+     
+    <p>    
+     <div class="FavouriteThings">
+        <h1>FavouriteThings</h1>
+      <div>
+          <h2>Music</h2>
+         <p>In terms of music, I mainly listen to all kinds of music except for metal. This includes hip hop,rap,house,trans,rock.
+          I don't specifically have a favorite artist, but it's safe to say that I listen to almost all the famous artists from their specific music type.
+          Here are some photos and links of famous artists and their songs:</p>
+          
+          <a href="https://en.wikipedia.org/wiki/Eminem"><img src="../Images/Eminem_Proekt_WEB.jpg" alt="Eminem" style="width:320px;height:327px;"></a>
+          <figcaption><em>Rap artist</em></figcaption>
+
+          <a href="https://en.wikipedia.org/wiki/Rihanna"><img src="../Images/Rihanna_Proekt_WEB.jpg" alt="Rihanna" style="width:320px;height:327px;"></a>
+          <figcaption><em>HIpHop artist</em></figcaption>
+
+          <a href="https://en.wikipedia.org/wiki/Bon_Jovi"><img src="../Images/Bon_Jovi_Proekt_WEB.jpg" alt="Bon_Jovi" style="width:320px;height:327px;"></a>
+          <figcaption><em>Rock artist</em></figcaption>
+
+         
+         <a href="https://www.youtube.com/watch?v=r_0JjYUe5jo">Eminem-Godzilla</a>
+
+         <a href="https://www.youtube.com/watch?v=CvBfHwUxHIk">Rihanna-Umbrella</a>
+
+         <a href="https://www.youtube.com/watch?v=vx2u5uUu3DE">Bon_Jovi-It's_My_Life</a>
+       </div>
+
+       
+       <p>
+       <div>
+           <h2>Food</h2>
+          <p> In terms of food, I'm a bit peeky. But I try to eat healthy and am very strict with my diet. I consume fruits, vegetables, and drink a lot of water on a daily basis.
+           My favourite meal is steak and rice.</p>
+
+           <div id = "MainImage">
+            <img id = "ImageCover" src = "fullsize/Steak_and_Rice.jpg" 
+             alt = "Full cover image">
+           </div> 
+           <div id="thumbs">
+            <img src="../Images/Steak_and_Rice.jpg" id="SaR" width=420 height=327 alt="Steak and Rice">
+            <img src="../Images/Fruits.jpg" id="F" width=420 height=327 alt="Fruits">
+            <img src="../Images/Vegetables.jpg" id="V" width=420 height=327 alt="Vegetables">
+           </div>
+
+
+           <p id="DinamickoPrevzemanje">Feel free to get some text from these webpages.
+           <button onclick="myFunction()">List of webpages</button>
+           <div id="steak and rice"></div>
+           <div id="fruit"></div>
+           <div id="vegetable"></div>
+           
+           <form id="target" action="destination.html">
+           <textarea id="comment" name="comment" rows="5" cols="50">
+          </textarea>
+          <input type="submit" value="Submit">
+            <input type="reset" value="Reset"></p>
+
+        </form>
+
+        </div>
+        </p>
+
+        <div>
+            <h2>Films</h2>
+           <p> I personally am a big fan of filmography. My favourite types of films are comedy,thriller,action and science-fiction.
+            My all time favourite movies are:The Avengers, The Shawshank Redemption, The Dark Knight and Lucifer. However I must say that I don't watch much TV or movie, only when I have a lot of free time.</p>
+
+
+            <a href="https://www.imdb.com/title/tt0848228/?ref_=nv_sr_srsg_7"><img src="../Images/Avengers.jpg" alt="The Avengers" style="width:320px;height:327px;"></a>
+
+            <a href="https://www.imdb.com/title/tt0111161/?ref_=nv_sr_srsg_0"><img src="../Images/ShawshankRedemptionMoviePoster.jpg" alt="The Shawshank Redemption" style="width:320px;height:327px;"></a>
+
+            <a href="https://www.imdb.com/title/tt0468569/?ref_=fn_al_tt_1"><img src="../Images/Dark_Knight.jpg" alt="The Dark Knight" style="width:320px;height:327px;"></a>
+
+            <a href="https://www.imdb.com/title/tt4052886/?ref_=nv_sr_srsg_0"><img src="../Images/Lucifer.jpg" alt="Lucifer" style="width:320px;height:327px;"></a>
+
+           
+        </div>
+     
+     
+    </div>
+    </p>
+
+    <p>
+    <div class="Gallery">
+        <div>
+            <h1>Gallery</h1>
+
+            <img src="../Images/Slika2.jpg" width=380 height=327
+            alt="Picture1">
+            <span id="CountedClicks1"> Likes</span><br>
+            <button class="btn" onclick="AddClick1()" type="button"><i class="fa fa-like"></i>Like</button>
+            <div class="row">
+              <div id="pa"></div>
+               <div class="column"><p><label>Comments:<br>
+                <textarea id="ta" name="comments" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
+                <button type="button" id="b1" onclick="AddComment()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                </label></p>
+                </div>
+                </div> 
+
+                <img src="../Images/Slika1.jpg" width=380 height=427
+            alt="Picture2">
+            <span id="CountedClicks2"> Likes</span><br>
+            <button class="btn" onclick="AddClick2()" type="button"><i class="fa fa-like"></i>Like</button>
+            <div class="row1">
+              <div id="hu"></div>
+               <div class="column1"><p><label>Comments:<br>
+                <textarea id="uh" name="comments1" rows="4" cols="30" placeholder="Enter comment here. "></textarea>
+                <button type="button" id="b2" onclick="addComment1()"><img src="comment.png" alt="Enter" width="25" height="25"></button>
+                </label></p>
+                </div>
+                </div>
+
+    </div>
+    </p>
+
+
+    <p>
+    <div class="Blog">
+      <h1>Blog</h1>
+      <div>
+        <form id="target" action="destination.html">
+          <label for="w3review">Write text here about topics of your interest:</label>
+          <textarea id="comment" name="comment" rows="5" cols="50">
+            </textarea>
+            <br><br>
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </form>
+        <button onclick="TellDateAfterBlogText()">Post</button>
+        <h3 id="demo"></h3>
+          
+
+          <form action="/action_page.php">
+            <label for="datetime-local">Please enter the date and time you entered the text above (date and time):</label>
+            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+          </form>
+      </div>
+
+    </div>
+    </p>
+
+
+    <p>
+    <div class="Anketa">
+        <h1>Poll</h1>
+        <div>
+          <h2>Your Personal Information</h2>
+            <form id="target" action="destination.html">
+            <label for="fname">First name:</label>
+            <input type="text" id="name" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="name" name="lname"><br><br>
+            <input type="reset" value="Reset">
+          
+        </div>
+
+
+          <div>
+            
+              <input type="email" placeholder="name@domain.com" id="email" name="email">
+              <input type="reset" value="Reset">
+            
+          </div>
+
+
+          <div>
+            
+              <input type="tel" id="telephone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+              <small>Format: 123-45-678</small><br><br>
+              <input type="reset" value="Reset">
+            
+          </div>
+          
+        
+        
+        <div>
+          <label for="Impression">Please enter your impression here:</label>
+            
+                <input type="checkbox" id="impression" name="impresija1" value="Amazing">
+                <label for="impresija1"> Excellent, I like it!</label><br>
+                <input type="checkbox" id="impression" name="impresija2" value="OK">
+                <label for="impresija2"> Good, it's OK.</label><br>
+                <input type="checkbox" id="impression" name="impresija3" value="Bad">
+                <label for="impresija3"> Could be done better.</label><br><br>
+                <input type="reset" value="Reset">
+              
+        </div>
+
+
+        <div>
+            
+              <label for="Rating">Please enter your rating here:</label>
+                <select name="rating" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br><br>
+                <input type="reset" value="Reset">
+              
+        </div>
+
+
+        <div>
+            
+                <textarea id="comments" name="comment" rows="4" cols="50">
+                  </textarea>
+                  <br><br>
+                  <input type="reset" value="Reset">
+                
+        </div></form>
+
+        <div id="helpText"></div>
+
+
+        <p><div id="myDIV">Have you finishes with the poll?</div>
+        <button onclick="Swap()">Yes</button></p>
+
+
+        <input type="submit" value="Submit">
+    </div>
+    </p>
+    
+
+
+    <div id="footer" class="Contact Info">
+      <h2>Contact Info</h2>
+        Telephone: <a href="Tel:+38970360066">070360066</a>
+        Mail: <a href="mailto:brovaandrej@gmail.com">brovaandrej@gmail.com</a>
+    </div>
+
+
+
+ </body>
+</html>
